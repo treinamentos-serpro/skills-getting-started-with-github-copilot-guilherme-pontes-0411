@@ -31,6 +31,7 @@ Uma aplicação FastAPI super simples que permite que estudantes visualizem e se
 | ------ | ----------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Obtém todas as atividades com seus detalhes e contagem atual de participantes |
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Inscreve-se em uma atividade                                                |
+| DELETE | `/activities/{activity_name}/participants?email=student@mergington.edu` | Remove um participante de uma atividade                                     |
 
 ## Modelo de Dados
 
@@ -48,3 +49,12 @@ A aplicação usa um modelo de dados simples com identificadores significativos:
    - Série/Ano escolar
 
 Todos os dados são armazenados em memória, o que significa que os dados serão resetados quando o servidor reiniciar.
+
+## Testes
+
+Na raiz do repositório, instale as dependências de desenvolvimento e execute a suíte:
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
